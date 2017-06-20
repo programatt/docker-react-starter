@@ -22,5 +22,25 @@ services:
       - "80:80"
     links:
       - client
+      - api
     depends_on:
       - client
+      - api
+
+  api:
+    hostname: api
+    build: ./api/
+    command: npm start
+    expose:
+      - "8080"
+    #ports:
+    #  - "8080:8080"
+    links:
+      - mongodb
+      - mongodb:mongodb.cloud66.local
+    environment:
+      - NODE_ENV=production
+      - MONGODB_ADDRESS=mongodb
+
+  mongodb:
+    image: mongo
