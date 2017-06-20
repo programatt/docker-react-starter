@@ -113,7 +113,7 @@ router.get('/product_quantities/:product_id', function(req, res) {
 
 router.get('/test',function(req,res){
 	res.status(200)
-	res.json({ message: "you rock dude"});
+	res.json({ message: "dude, this is legit."});
 });
 
 

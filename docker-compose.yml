@@ -12,9 +12,8 @@ services:
     #  - "3000:3000"
     expose:
       - "3000"
-    env_file: '.env.local'
     environment:
-      - NODE_ENV=${NODE_ENV}
+      - NODE_ENV=development
 
   nginx:
     build: ./nginx/
@@ -31,6 +30,9 @@ services:
     hostname: api
     build: ./api/
     command: npm start
+    volumes:
+      - '/usr/src/app/node_modules'
+      - './api:/usr/src/app'
     expose:
       - "8080"
     #ports:
@@ -39,7 +41,7 @@ services:
       - mongodb
       - mongodb:mongodb.cloud66.local
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - MONGODB_ADDRESS=mongodb
 
   mongodb:
