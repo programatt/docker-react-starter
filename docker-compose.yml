@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  client:
+    build: ./client/
+    volumes:
+      - '/usr/src/app/node_modules'
+      - './client:/usr/src/app'
+    ports:
+      - "3000:3000"
