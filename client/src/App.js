@@ -11,7 +11,7 @@ class App extends Component {
           <h2>Welcome to The Jungle</h2>
         </div>
         <p className="App-intro">
-          Stay Classy San Diego 3.
+          Stay Classy San Diego 2.
         </p>
       </div>
     );
